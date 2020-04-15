@@ -1,26 +1,43 @@
-import { Component, OnInit } from '@angular/core';
-import { AlimentariService } from '../api'
-
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { AlimentariService } from '../api/api/alimentari.service';
+        
+        import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-alim',
   templateUrl: './alim.component.html',
-  styleUrls: ['./alim.component.scss']
+  styleUrls: ['./alim.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class AlimComponent implements OnInit {
-  furnizor : string;
+  public columns: any;
+  public rows: any;
+  auto: any;
 
-
-  constructor(public alimService : AlimentariService) { }
+  constructor(public alimService : AlimentariService) { 
+    this.columns = [
+      {name: 'data'},
+      {name: 'furnizor'},
+      {name: 'number'},
+      {name: 'auto'},
+      {name: 'sumaTotala'},
+      {name: 'litri'}
+    ]
+  }
 
 
   ngOnInit() {
-    this.alimService.getPetById(1).subscribe((res) => {
-      this.furnizor = res.auto;
-      console.log(res.auto);
-      
+    this.alimService.alimentariSearchAllGet().subscribe((res : any[]) => {
+      this.rows = res;
     })
+
+   
+
   }
 
+register(f: NgForm){
+  this.alimService.add(f.value).subscribe(()=>{})
+  location.reload();
+}
 }
 

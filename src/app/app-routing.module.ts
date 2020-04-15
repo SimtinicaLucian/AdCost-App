@@ -3,6 +3,7 @@ import { Routes, RouterModule, PreloadingStrategy, PreloadAllModules } from '@an
 import { AlimComponent } from '../app/alim/alim.component';
 import {HomeComponent} from '../app/home/home.component';
 import {ServiceComponent} from '../app/service/service.component';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 
 const routes: Routes = [
@@ -17,7 +18,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes,
-    { preloadingStrategy: PreloadAllModules}    )],
+    { preloadingStrategy: PreloadAllModules}    ), NgxDatatableModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
