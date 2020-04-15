@@ -40,4 +40,4 @@ register(f: NgForm){
   location.reload();
 }
 }
-
+  //
