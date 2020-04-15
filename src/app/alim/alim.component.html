@@ -3,7 +3,7 @@
 
  
 
-<section id="alimentari">
+<!-- <section id="alimentari">
     <div class="container">
       <h1>Adaugati alimentari</h1>
       <div class="row">
@@ -37,18 +37,69 @@
             <button type="submit" class="btn btn-primary">Adaugati</button>
       </form>
       </div>
-      
-  
-  
       </div>
-  
     </div>
-    </section>
+    </section> -->
+
+    <div class="container">
+      <div class="register-item">
+        <form #f="ngForm" (ngSubmit)="register(f)" class="form form-register">
+  
+          <div class="form-field">
+                <label class="user" ><span class="hidden">Data</span></label>
+                <input name="data" id="register-data" type="text" class="form-input" placeholder="Data" ngModel required>
+          </div>
+
+          <div class="form-field">
+            <label class="user" ><span class="hidden">Furnizor</span></label>
+            <input name="furnizor" id="register-furnizor" type="text" class="form-input" placeholder="Furnizor" ngModel required>
+          </div>
+
+          <div class="form-field">
+            <label class="user" ><span class="hidden">Numar</span></label>
+            <input name="number" id="register-number" type="text" class="form-input" placeholder="Numar" ngModel required>
+          </div>
+
+          <div class="form-field">
+            <label class="user" ><span class="hidden">Auto</span></label>
+            <input name="auto" id="register-auto" type="text" class="form-input" placeholder="Auto" ngModel required>
+          </div>
+
+          <div class="form-field">
+            <label class="user" ><span class="hidden">Suma totala</span></label>
+            <input name="sumaTotala" id="register-sumaTotala" type="text" class="form-input" placeholder="Suma totala" ngModel required>
+          </div>
+
+          <div class="form-field">
+            <label class="user" ><span class="hidden">Litri</span></label>
+            <input name="litri" id="register-litri" type="text" class="form-input" placeholder="Litri" ngModel required>
+          </div>
+  
+          <div class="form-field">
+            <input type="submit" value="Register">
+          </div>
+
+        </form>
+      </div>
+    </div>
 
 
-    Test: {{furnizor}}
+Auto get : {{auto}}
+
+    <div class="ion-padding">
+      <ngx-datatable 
+        class="material"
+        [limit]="8" 
+        [rows]="rows" 
+        [rowHeight]="50" 
+        [columns]="columns"
+        [columnMode]="'force'" 
+        [sortType]="'multi'" 
+        [headerHeight]="50" 
+        [footerHeight]="50">
+      </ngx-datatable>
+    </div>
        
 </body>
-
 </html>
   

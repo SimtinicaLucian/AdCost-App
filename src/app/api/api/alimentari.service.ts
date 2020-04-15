@@ -98,9 +98,9 @@ export class AlimentariService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public alimentariSearchAllGet(observe?: 'body', reportProgress?: boolean): Observable<Alimentari>;
-    public alimentariSearchAllGet(observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<Alimentari>>;
-    public alimentariSearchAllGet(observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<Alimentari>>;
+    public alimentariSearchAllGet(observe?: 'body', reportProgress?: boolean): Observable<Array<Alimentari>>;
+    public alimentariSearchAllGet(observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<Array<Alimentari>>>;
+    public alimentariSearchAllGet(observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<Array<Alimentari>>>;
     public alimentariSearchAllGet(observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
 
         let headers = this.defaultHeaders;
@@ -118,7 +118,7 @@ export class AlimentariService {
         const consumes: string[] = [
         ];
 
-        return this.httpClient.get<Alimentari>(`${this.basePath}/alimentari/searchAll`,
+        return this.httpClient.get<Array<Alimentari>>(`${this.basePath}/alimentari/searchAll`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
