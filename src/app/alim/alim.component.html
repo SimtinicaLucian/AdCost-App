@@ -1,5 +1,19 @@
 <html>
-<body>
+
+  <head>
+    <title>Business</title>
+    <link rel="stylesheet" href="alim.component.scss">
+    <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3
+    /css/bootstrap.min.css">
+    <link rel="stylesheet"
+     href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+      </head>
+      <body>
 
  
 
@@ -41,41 +55,53 @@
     </div>
     </section> -->
 
+
+    <section id="contact">
     <div class="container">
+    
+    <div class="row">
+    <div class="col-md-6">
+      
       <div class="register-item">
         <form #f="ngForm" (ngSubmit)="register(f)" class="form form-register">
   
-          <div class="form-field">
-                <label class="user" ><span class="hidden">Data</span></label>
-                <input name="data" id="register-data" type="text" class="form-input" placeholder="Data" ngModel required>
+          <div class="form-group">
+                <!-- <label class="user" ><span class="hidden">Data</span></label>
+                <input name="data" id="register-data" type="text" class="form-input" placeholder="Data" ngModel required> -->
+                <input type="text" class="form-control" placeholder="Data">
+              </div>
+
+          <div class="form-group">
+            <!-- <label class="user" ><span class="hidden">Furnizor</span></label>
+            <input name="furnizor" id="register-furnizor" type="text" class="form-input" placeholder="Furnizor" ngModel required> -->
+            <input type="text" class="form-control" placeholder="Furnizor">
           </div>
 
-          <div class="form-field">
-            <label class="user" ><span class="hidden">Furnizor</span></label>
-            <input name="furnizor" id="register-furnizor" type="text" class="form-input" placeholder="Furnizor" ngModel required>
+          <div class="form-group">
+            <!-- <label class="user" ><span class="hidden">Numar</span></label>
+            <input name="number" id="register-number" type="text" class="form-input" placeholder="Numar" ngModel required> -->
+            <input type="number" class="form-control" placeholder="Numar">
           </div>
 
-          <div class="form-field">
-            <label class="user" ><span class="hidden">Numar</span></label>
-            <input name="number" id="register-number" type="text" class="form-input" placeholder="Numar" ngModel required>
+          <div class="form-group">
+            <!-- <label class="user" ><span class="hidden">Auto</span></label>
+            <input name="auto" id="register-auto" type="text" class="form-input" placeholder="Auto" ngModel required> -->
+            <input type="text" class="form-control" placeholder="Auto">
           </div>
 
-          <div class="form-field">
-            <label class="user" ><span class="hidden">Auto</span></label>
-            <input name="auto" id="register-auto" type="text" class="form-input" placeholder="Auto" ngModel required>
+          <div class="form-group">
+            <!-- <label class="user" ><span class="hidden">Suma totala</span></label>
+            <input name="sumaTotala" id="register-sumaTotala" type="text" class="form-input" placeholder="Suma totala" ngModel required> -->
+            <input type="number" class="form-control" placeholder="Suma totala">
           </div>
 
-          <div class="form-field">
-            <label class="user" ><span class="hidden">Suma totala</span></label>
-            <input name="sumaTotala" id="register-sumaTotala" type="text" class="form-input" placeholder="Suma totala" ngModel required>
-          </div>
-
-          <div class="form-field">
-            <label class="user" ><span class="hidden">Litri</span></label>
-            <input name="litri" id="register-litri" type="text" class="form-input" placeholder="Litri" ngModel required>
+          <div class="form-group">
+            <!-- <label class="user" ><span class="hidden">Litri</span></label>
+            <input name="litri" id="register-litri" type="text" class="form-input" placeholder="Litri" ngModel required> -->
+            <input type="number" class="form-control" placeholder="Litri">
           </div>
   
-          <div class="form-field">
+          <div class="form-group">
             <input type="submit" value="Register">
           </div>
 
@@ -84,12 +110,36 @@
     </div>
 
 
-Auto get : {{auto}}
+    <div class="col-md-6 contact-info">   
+      <div class="register-item">
+        <form #f="ngForm" (ngSubmit)="register(f)" class="form form-register">   
+   
+      
+          <div class="form-group">
+            <!-- <label class="user" ><span class="hidden">Litri</span></label>
+            <input name="litri" id="register-litri" type="text" class="form-input" placeholder="Litri" ngModel required> -->
+            <input type="number" class="form-control" placeholder="number">
+          </div>
+  
+          <div class="form-group">
+            <input type="submit" value="Delete">
+          </div>
+</form>
+</div>
+</div>
+
+
+</div>
+</div>
+
+</section>
+
+
 
     <div class="ion-padding">
       <ngx-datatable 
         class="material"
-        [limit]="8" 
+        [limit]="10" 
         [rows]="rows" 
         [rowHeight]="50" 
         [columns]="columns"
@@ -100,6 +150,14 @@ Auto get : {{auto}}
       </ngx-datatable>
     </div>
        
+
+ 
+
+
 </body>
 </html>
   
+
+
+
+

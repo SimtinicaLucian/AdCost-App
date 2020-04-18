@@ -1170,7 +1170,7 @@ input {
 .form-register input[type="email"],
 .form-register input[type="password"],
 .form-register input[type="submit"] {
-  border-radius: 0.25rem;
+  border-radius: 1.25rem;
   padding: 1rem;
   color: #3A3F44;  
 }
@@ -1189,10 +1189,11 @@ input {
   border-top-left-radius: 0;
 }
 .form-register input[type="text"]:focus, .form-register input[type="email"]:hover, .form-register input[type="password"]:focus, .form-register input[type="password"]:hover {
-  background-color: black;
+  // background-color: black;
 }
 .form-register input[type="submit"] {
-  background-color: rgb(86, 69, 238);
+   background-color: rgb(86, 69, 238);
+  // background-color: red;
   color: #eee;
   font-weight: bold;
   text-transform: uppercase;
@@ -1223,3 +1224,5 @@ input {
 .text--center {
   text-align: center;
 }
+
+
