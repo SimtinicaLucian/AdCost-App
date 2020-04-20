@@ -39,5 +39,11 @@ register(f: NgForm){
   this.alimService.add(f.value).subscribe(()=>{})
   location.reload();
 }
+
+delete(data){
+  this.alimService.delete(data.number).subscribe(()=>{})
+  location.reload();
+}
+
 }
   //

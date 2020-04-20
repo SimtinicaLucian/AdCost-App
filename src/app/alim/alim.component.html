@@ -66,39 +66,40 @@
         <form #f="ngForm" (ngSubmit)="register(f)" class="form form-register">
   
           <div class="form-group">
-                <!-- <label class="user" ><span class="hidden">Data</span></label>
-                <input name="data" id="register-data" type="text" class="form-input" placeholder="Data" ngModel required> -->
-                <input type="text" class="form-control" placeholder="Data">
+                <label class="user" ><span class="hidden">Data</span></label>
+                <input name="data" id="register-data" type="text" class="form-control" placeholder="Data" ngModel required>
+                <!-- <input type="text" class="form-control" placeholder="Data"> -->
+                
               </div>
 
           <div class="form-group">
-            <!-- <label class="user" ><span class="hidden">Furnizor</span></label>
-            <input name="furnizor" id="register-furnizor" type="text" class="form-input" placeholder="Furnizor" ngModel required> -->
-            <input type="text" class="form-control" placeholder="Furnizor">
+            <label class="user" ><span class="hidden">Furnizor</span></label>
+            <input name="furnizor" id="register-furnizor" type="text" class="form-control" placeholder="Furnizor" ngModel required>
+            <!-- <input type="text" class="form-control" placeholder="Furnizor"> -->
           </div>
 
           <div class="form-group">
-            <!-- <label class="user" ><span class="hidden">Numar</span></label>
-            <input name="number" id="register-number" type="text" class="form-input" placeholder="Numar" ngModel required> -->
-            <input type="number" class="form-control" placeholder="Numar">
+            <label class="user" ><span class="hidden">Numar</span></label>
+            <input name="number" id="register-number" type="text" class="form-control" placeholder="Numar" ngModel required>
+            <!-- <input type="number" class="form-control" placeholder="Numar"> -->
           </div>
 
           <div class="form-group">
-            <!-- <label class="user" ><span class="hidden">Auto</span></label>
-            <input name="auto" id="register-auto" type="text" class="form-input" placeholder="Auto" ngModel required> -->
-            <input type="text" class="form-control" placeholder="Auto">
+            <label class="user" ><span class="hidden">Auto</span></label>
+            <input name="auto" id="register-auto" type="text" class="form-control" placeholder="Auto" ngModel required>
+            <!-- <input type="text" class="form-control" placeholder="Auto"> -->
           </div>
 
           <div class="form-group">
-            <!-- <label class="user" ><span class="hidden">Suma totala</span></label>
-            <input name="sumaTotala" id="register-sumaTotala" type="text" class="form-input" placeholder="Suma totala" ngModel required> -->
-            <input type="number" class="form-control" placeholder="Suma totala">
+            <label class="user" ><span class="hidden">Suma totala</span></label>
+            <input name="sumaTotala" id="register-sumaTotala" type="text" class="form-control" placeholder="Suma totala" ngModel required>
+            <!-- <input type="number" class="form-control" placeholder="Suma totala"> -->
           </div>
 
           <div class="form-group">
-            <!-- <label class="user" ><span class="hidden">Litri</span></label>
-            <input name="litri" id="register-litri" type="text" class="form-input" placeholder="Litri" ngModel required> -->
-            <input type="number" class="form-control" placeholder="Litri">
+            <label class="user" ><span class="hidden">Litri</span></label>
+            <input name="litri" id="register-litri" type="text" class="form-control" placeholder="Litri" ngModel required>
+            <!-- <input type="number" class="form-control" placeholder="Litri"> -->
           </div>
   
           <div class="form-group">
@@ -112,21 +113,31 @@
 
     <div class="col-md-6 contact-info">   
       <div class="register-item">
-        <form #f="ngForm" (ngSubmit)="register(f)" class="form form-register">   
-   
+        <form #f="ngForm" (ngSubmit)="delete(f.value)" class="form form-register">
+        
       
+          <!-- <div class="form-group">
+            
+            <input name="number" id="register-number" type="text" class="form-control" placeholder="Number">
+          </div> -->
+
           <div class="form-group">
-            <!-- <label class="user" ><span class="hidden">Litri</span></label>
-            <input name="litri" id="register-litri" type="text" class="form-input" placeholder="Litri" ngModel required> -->
-            <input type="number" class="form-control" placeholder="number">
+            <label class="user" ><span class="hidden">Number</span></label>
+            <input name="number" id="register-number" type="text" class="form-group" placeholder="Number" ngModel required>
+            <!-- <input type="number" class="form-control" placeholder="Litri"> -->
           </div>
+
   
           <div class="form-group">
             <input type="submit" value="Delete">
           </div>
+
+
+
 </form>
 </div>
 </div>
+
 
 
 </div>
