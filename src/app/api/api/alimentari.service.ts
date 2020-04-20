@@ -48,20 +48,21 @@ export class AlimentariService {
 
 ///////////////////////////////////////////////
 
- /**
-     * GET data sensor
+ 
+    /**
+     * Deletes a pet
      * 
-     * @param number ID of data that needs to be fetched
+     * @param number ID of pet to return
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public delete(number: number, observe?: 'body', reportProgress?: boolean): Observable<Alimentari>;
-    public delete(number: number, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<Alimentari>>;
-    public delete(number: number, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<Alimentari>>;
-    public delete(number: number, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+    public deletePet(number: number, observe?: 'body', reportProgress?: boolean): Observable<Alimentari>;
+    public deletePet(number: number, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<Alimentari>>;
+    public deletePet(number: number, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<Alimentari>>;
+    public deletePet(number: number, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
 
         if (number === null || number === undefined) {
-            throw new Error('Required parameter number was null or undefined when calling number.');
+            throw new Error('Required parameter number was null or undefined when calling deletePet.');
         }
 
         let headers = this.defaultHeaders;
@@ -79,7 +80,7 @@ export class AlimentariService {
         const consumes: string[] = [
         ];
 
-        return this.httpClient.delete<Alimentari>(`${this.basePath}/alimentari/delete/number/${encodeURIComponent(String(number))}`,
+        return this.httpClient.delete<Alimentari>(`${this.basePath}/alimentari/delete/${encodeURIComponent(String(number))}`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -88,7 +89,6 @@ export class AlimentariService {
             }
         );
     }
-
 
 
 ///////////////////////////////////////////////
@@ -229,6 +229,9 @@ export class AlimentariService {
         );
     }
 
+
+
+    
 }
 
 
