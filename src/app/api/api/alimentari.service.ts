@@ -48,7 +48,7 @@ export class AlimentariService {
 
 ///////////////////////////////////////////////
 
-  /**
+ /**
      * GET data sensor
      * 
      * @param number ID of data that needs to be fetched
@@ -61,7 +61,7 @@ export class AlimentariService {
     public delete(number: number, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
 
         if (number === null || number === undefined) {
-            throw new Error('Required parameter dataId was null or undefined when calling number.');
+            throw new Error('Required parameter number was null or undefined when calling number.');
         }
 
         let headers = this.defaultHeaders;
@@ -79,7 +79,7 @@ export class AlimentariService {
         const consumes: string[] = [
         ];
 
-        return this.httpClient.delete<Alimentari>(`${this.basePath}/alimentari/delete/${encodeURIComponent(Number(number))}`,
+        return this.httpClient.delete<Alimentari>(`${this.basePath}/alimentari/delete/number/${encodeURIComponent(String(number))}`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -99,6 +99,7 @@ export class AlimentariService {
 
 
     
+
 
     /**
      * Add a new coast
@@ -146,6 +147,8 @@ export class AlimentariService {
             }
         );
     }
+
+
 
 
     
