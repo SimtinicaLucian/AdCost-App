@@ -40,10 +40,17 @@ register(f: NgForm){
   location.reload();
 }
 
-delete(data){
-  this.alimService.delete(data.number).subscribe(()=>{})
+delete(test){
+  // console.log("numar: " + test.uid);
+  this.alimService.deletePet(test.number).subscribe((res)=>{console.log(res)})
   location.reload();
 }
+
+search(data){
+  this.alimService.getPetById(data.number).subscribe(()=>{})
+  location.reload();
+}
+
 
 }
   //
