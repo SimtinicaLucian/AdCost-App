@@ -1184,9 +1184,9 @@ input {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
-// .form-register input[type="text"]:focus, .form-register input[type="email"]:hover, .form-register input[type="password"]:focus, .form-register input[type="password"]:hover {
-//   // background-color: black;
-// }
+.form-register input[type="text"]:focus, .form-register input[type="email"]:hover, .form-register input[type="password"]:focus, .form-register input[type="password"]:hover {
+  // background-color: black;
+}
 .form-register input[type="submit"] {
    background-color: rgb(86, 69, 238);
   // background-color: red;

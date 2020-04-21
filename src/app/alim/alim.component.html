@@ -76,11 +76,8 @@
         <form #f="ngForm" (ngSubmit)="register(f)" class="form form-register">
   
           <div class="form-group">
-              
-                <input name="data" id="register-data" type="text" class="form-control" placeholder="Data" ngModel required>
-         
-                
-              </div>
+            <input name="data" id="register-data" type="text" class="form-control" placeholder="Data" ngModel required>     
+          </div>
 
           <div class="form-group">
             <input name="furnizor" id="register-furnizor" type="text" class="form-control" placeholder="Furnizor" ngModel required>       
@@ -108,7 +105,11 @@
 
         </form>
       </div>
-    </div> -->
+    </div>
+    </div>
+    </div>
+    </section> -->
+    
 
 <!-- ----------------------1111111-------------------------------- -->
 
@@ -134,6 +135,13 @@
 
 
 <!-- ---------------------------------------------------- -->
+
+
+
+
+<!-- -------------------------2------------------------------------ -->
+
+<section id="add">
 <div class="container">
   <div class="row">
     <div class="col-sm-9 col-md-7 col-lg-6 mx-auto">
@@ -141,10 +149,65 @@
         <div class="card-body">
           <form class="form-signin">
               <div class="register-item">
-               <form #f="ngForm" (ngSubmit)="delete(f.value)" class="form form-register">
+               <form #f="ngForm" (ngSubmit)="register(f)" class="form form-register">
+                <div class="form-group">
+                  <input name="data" id="register-data" type="text" class="form-control" placeholder="Data" ngModel required>     
+                </div>
+      
+                <div class="form-group">
+                  <input name="furnizor" id="register-furnizor" type="text" class="form-control" placeholder="Furnizor" ngModel required>       
+                </div>
+      
+                <div class="form-group">
+                  <input name="number" id="register-number" type="text" class="form-control" placeholder="Numar" ngModel required>
+                </div>
+      
+                <div class="form-group">
+                  <input name="auto" id="register-auto" type="text" class="form-control" placeholder="Auto" ngModel required>
+                </div>
+      
+                <div class="form-group">
+                  <input name="sumaTotala" id="register-sumaTotala" type="text" class="form-control" placeholder="Suma totala" ngModel required>
+                </div>
+      
+                <div class="form-group">
+                  <input name="litri" id="register-litri" type="text" class="form-control" placeholder="Litri" ngModel required>
+                </div>
+                  <div class="form-field2">
+                    <input type="submit" value="Register">
+                  </div>
+                </form>
+              </div>
+           
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- -------------------------2------------------------------------ -->
+<section id="delete">
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-6 mx-auto">
+      <div class="card card-signin my-5">
+        <div class="card-body">
+          <form class="form-signin">
+              <div class="register-item">
+               <form #b="ngForm" (ngSubmit)="delete(b.value)" class="form form-register">
                   <div class="form-field"> 
-                        <label class="user" ><span class="hidden">Unique identifier</span></label>
-                        <input name="number" id="number" type="text" class="form-input" placeholder="Unique identifier" ngModel required>
+                    <input name="number" id="register-number" type="text" class="form-control" placeholder="Numar" ngModel required>
                   </div>
                   <div class="form-field2">
                     <input type="submit" value="Delete">
@@ -158,18 +221,44 @@
     </div>
   </div>
 </div>
-
+</section>
 
 
 
 <!-- 
---------------------------------------------- -->
+--------------------333333333333333------------------------- -->
+
+<!-- <section id="delete">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-6 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <form class="form-signin">
+                <div class="register-item">
+                 <form #b="ngForm" (ngSubmit)="search(b.value)" class="form form-register">
+                    <div class="form-field"> 
+                          <label class="user" ><span class="hidden">Unique identifier</span></label>
+                          <input name="number" id="number" type="text" class="form-input" placeholder="Unique identifier" ngModel required>
+                    </div>
+                    <div class="form-field2">
+                      <input type="submit" value="Search">
+                    </div>
+                  </form>
+                </div>
+             
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section> -->
 
 
 
-
-
-
+<!-- 
+--------------------333333333333333------------------------- -->
 
 
     <div class="ion-padding">
