@@ -195,9 +195,9 @@ export class AlimentariService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public getPetById(number: number, observe?: 'body', reportProgress?: boolean): Observable<Alimentari>;
-    public getPetById(number: number, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<Alimentari>>;
-    public getPetById(number: number, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<Alimentari>>;
+    public getPetById(number: number, observe?: 'body', reportProgress?: boolean): Observable<Array<Alimentari>>;
+    public getPetById(number: number, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<Array<Alimentari>>>;
+    public getPetById(number: number, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<Array<Alimentari>>>;
     public getPetById(number: number, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
 
         if (number === null || number === undefined) {
@@ -219,7 +219,7 @@ export class AlimentariService {
         const consumes: string[] = [
         ];
 
-        return this.httpClient.get<Alimentari>(`${this.basePath}/alimentari/search/number/${encodeURIComponent(String(number))}`,
+        return this.httpClient.get<Array<Alimentari>>(`${this.basePath}/alimentari/search/number/${encodeURIComponent(String(number))}`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -231,10 +231,46 @@ export class AlimentariService {
 
 
 
+       /**
+     * Find pet by ID
+     * Returns a single pet
+     * @param furnizor ID of pet to return
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public getPetByFurnizor(furnizor: string, observe?: 'body', reportProgress?: boolean): Observable<Alimentari>;
+    public getPetByFurnizor(furnizor: string, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<Alimentari>>;
+    public getPetByFurnizor(furnizor: string, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<Alimentari>>;
+    public getPetByFurnizor(furnizor: string, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+
+        if (furnizor === null || furnizor === undefined) {
+            throw new Error('Required parameter furnizor was null or undefined when calling getPetByFurnizor.');
+        }
+
+        let headers = this.defaultHeaders;
+
+        // to determine the Accept header
+        let httpHeaderAccepts: string[] = [
+            'application/json'
+        ];
+        const httpHeaderAcceptSelected: string | undefined = this.configuration.selectHeaderAccept(httpHeaderAccepts);
+        if (httpHeaderAcceptSelected != undefined) {
+            headers = headers.set('Accept', httpHeaderAcceptSelected);
+        }
+
+        // to determine the Content-Type header
+        const consumes: string[] = [
+        ];
+
+        return this.httpClient.get<Alimentari>(`${this.basePath}/alimentari/search/furnizor/${encodeURIComponent(String(furnizor))}`,
+            {
+                withCredentials: this.configuration.withCredentials,
+                headers: headers,
+                observe: observe,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
     
 }
-
-
-//////aa
-///
-///

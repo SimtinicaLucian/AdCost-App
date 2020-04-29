@@ -228,7 +228,7 @@
 <!-- 
 --------------------333333333333333------------------------- -->
 
-<!-- <section id="delete">
+<section id="search">
   <div class="container">
     <div class="row">
       <div class="col-sm-9 col-md-7 col-lg-6 mx-auto">
@@ -236,10 +236,9 @@
           <div class="card-body">
             <form class="form-signin">
                 <div class="register-item">
-                 <form #b="ngForm" (ngSubmit)="search(b.value)" class="form form-register">
+                 <form #c="ngForm" (ngSubmit)="search(c.value)" class="form form-register">
                     <div class="form-field"> 
-                          <label class="user" ><span class="hidden">Unique identifier</span></label>
-                          <input name="number" id="number" type="text" class="form-input" placeholder="Unique identifier" ngModel required>
+                      <input name="number" id="register-number" type="text" class="form-control" placeholder="Numar" ngModel required>
                     </div>
                     <div class="form-field2">
                       <input type="submit" value="Search">
@@ -250,33 +249,44 @@
             </form>
           </div>
         </div>
+        
       </div>
     </div>
   </div>
-  </section> -->
+  </section>
+
+
+<div class="ion-padding">
+  <ngx-datatable 
+    class="material"
+    [limit]="1" 
+    [rows]="auto" 
+    [rowHeight]="50" 
+    [columns]="columns"
+    [columnMode]="'force'" 
+    [sortType]="'multi'" 
+    [headerHeight]="50" 
+    [footerHeight]="50">
+  </ngx-datatable>
+</div>
+   
 
 
 
-<!-- 
---------------------333333333333333------------------------- -->
-
-
-    <div class="ion-padding">
-      <ngx-datatable 
-        class="material"
-        [limit]="10" 
-        [rows]="rows" 
-        [rowHeight]="50" 
-        [columns]="columns"
-        [columnMode]="'force'" 
-        [sortType]="'multi'" 
-        [headerHeight]="50" 
-        [footerHeight]="50">
-      </ngx-datatable>
-    </div>
-       
-
-
+<div class="ion-padding">
+  <ngx-datatable 
+    class="material"
+    [limit]="10" 
+    [rows]="rows" 
+    [rowHeight]="50" 
+    [columns]="columns"
+    [columnMode]="'force'" 
+    [sortType]="'multi'" 
+    [headerHeight]="50" 
+    [footerHeight]="50">
+  </ngx-datatable>
+</div>
+   
 
 
 
