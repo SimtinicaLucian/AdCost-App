@@ -9,7 +9,9 @@ import { ServiceComponent } from './service/service.component';
 import { ApiModule } from './api';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FilterPipe } from './filter.pipe';
+
 
 
 @NgModule({
@@ -17,7 +19,13 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     AlimComponent,
     HomeComponent,
-    ServiceComponent
+    ServiceComponent,
+    FilterPipe,
+
+
+
+
+
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
   imports: [
@@ -27,6 +35,9 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     HttpClientModule,
     NgxDatatableModule
+
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
