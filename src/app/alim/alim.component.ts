@@ -21,6 +21,9 @@ export class AlimComponent implements OnInit {
   public furnizor: any;
   number: any;
 
+  
+
+
 
   constructor(public alimService : AlimentariService) { 
     this.columns = [
@@ -67,6 +70,21 @@ search(data){
   })
   // location.reload();
 }
+
+search2(data1){
+  // console.log("numar: " + data1.furnizor);
+  this.alimService.getPetByFurnizor(data1.furnizor).subscribe((res )=>{
+    this.furnizor= res;
+    // this.auto = res.auto;
+    // this.furnizor = res.furnizor;
+    
+    console.log(res);
+  })
+  // location.reload();
+}
+
+
+
 
 }
 

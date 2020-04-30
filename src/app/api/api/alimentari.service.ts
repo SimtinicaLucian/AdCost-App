@@ -1,5 +1,4 @@
 
-
 import { Inject, Injectable, Optional }                      from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams,
          HttpResponse, HttpEvent }                           from '@angular/common/http';
@@ -238,9 +237,9 @@ export class AlimentariService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public getPetByFurnizor(furnizor: string, observe?: 'body', reportProgress?: boolean): Observable<Alimentari>;
-    public getPetByFurnizor(furnizor: string, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<Alimentari>>;
-    public getPetByFurnizor(furnizor: string, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<Alimentari>>;
+    public getPetByFurnizor(furnizor: string, observe?: 'body', reportProgress?: boolean): Observable<Array<Alimentari>>;
+    public getPetByFurnizor(furnizor: string, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<Array<Alimentari>>>;
+    public getPetByFurnizor(furnizor: string, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<Array<Alimentari>>>;
     public getPetByFurnizor(furnizor: string, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
 
         if (furnizor === null || furnizor === undefined) {
@@ -262,7 +261,7 @@ export class AlimentariService {
         const consumes: string[] = [
         ];
 
-        return this.httpClient.get<Alimentari>(`${this.basePath}/alimentari/search/furnizor/${encodeURIComponent(String(furnizor))}`,
+        return this.httpClient.get<Array<Alimentari>>(`${this.basePath}/alimentari/search/furnizor/${encodeURIComponent(String(furnizor))}`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
