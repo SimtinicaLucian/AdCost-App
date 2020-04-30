@@ -11,6 +11,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilterPipe } from './filter.pipe';
+// -----------------------------------
+
+// ------------------------------------
 
 
 
@@ -21,6 +24,7 @@ import { FilterPipe } from './filter.pipe';
     HomeComponent,
     ServiceComponent,
     FilterPipe,
+// ---------------------------------------
 
 
 
