@@ -65,8 +65,44 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3
 </ul> -->
 
 
+<input type="text" #myInput [(ngModel)]="furniz" (input)="Search()"   />
+  
+  {{furniz}}
+  <br/>
+  <!-- <table class="table">
+    <tr>
+      <th>Data</th>
+      <th>Furnizor</th>
+      <th>Number</th>
+      <th>Auto</th>
+      <th>sumaTotala</th>
+      <th>Litri</th>
+    </tr>
+    <tr *ngFor='let o of empolyess'>
+      <td>{{o.data}}</td>
+      <td>{{o.furnizor}}</td>
+      <td>{{o.number}}</td>
+      <td>{{o.auto}}</td>
+      <td>{{o.sumaTotala}}</td>
+      <td>{{o.litri}}</td>
 
+    </tr>
+  </table> -->
 
+  <div class="ion-padding">
+    <ngx-datatable 
+      class="material"
+      [limit]="2" 
+      [rows]="empolyess" 
+      [rowHeight]="50" 
+      [columns]="columns"
+      [columnMode]="'force'" 
+      [sortType]="'multi'" 
+      [headerHeight]="50" 
+      [footerHeight]="50">
+    </ngx-datatable>
+  </div>
+ 
 
 
 
