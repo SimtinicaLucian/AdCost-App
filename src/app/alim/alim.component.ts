@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { AlimentariService } from '../api/api/alimentari.service';
 import {NgForm} from '@angular/forms';
+import { employees } from '../../datamodel/employess.model'
 
 @Component({
   selector: 'app-alim',
@@ -20,7 +21,10 @@ export class AlimComponent implements OnInit {
   public auto: any;
   public furnizor: any;
   number: any;
-
+  // ---------------------------
+  empolyess: employees[] =[];
+  furniz: string;
+// ----------------------------
   
 
 
@@ -40,6 +44,7 @@ export class AlimComponent implements OnInit {
   ngOnInit() {
     this.alimService.alimentariSearchAllGet().subscribe((res : any[]) => {
       this.rows = res;
+      this.empolyess = res;
 
       
     })
@@ -82,6 +87,28 @@ search2(data1){
   })
   // location.reload();
 }
+
+
+// --------------------------------
+
+Search()
+{
+  
+  if(this.furniz != ""){
+
+
+  this.rows=this.rows.filter(res=>{
+    return res.furnizor.toLocaleLowerCase().match(this.furniz.toLocaleLowerCase());
+  });
+
+ 
+
+  }else if (this.furniz ==""){
+  this.ngOnInit();
+}
+}
+
+// -----------------------------
 
 
 
