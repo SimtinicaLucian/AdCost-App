@@ -2,7 +2,7 @@
 
   <head>
     <title>Business</title>
-    <link rel="stylesheet" href="alim.component.scss">
+    <link rel="stylesheet" href="salariu.component.scss">
     <link rel="stylesheet"
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3
     /css/bootstrap.min.css">
@@ -130,7 +130,7 @@
 
 <section id="contact">
   <div class="container">
-    <h1>Alimentari</h1>
+    <h1>Salariu</h1>
   </div>
 </section>
 
@@ -153,16 +153,17 @@
                 <input name="data" id="register-data" type="text" class="form-control" placeholder="Data" ngModel required>     
               </div>
     
+                  
               <div class="form-group">
-                <input name="furnizor" id="register-furnizor" type="text" class="form-control" placeholder="Furnizor" ngModel required>       
+                <input name="nume" id="register-nume" type="text" class="form-control" placeholder="Nume" ngModel required>       
               </div>
-    
+
               <div class="form-group">
                 <input name="number" id="register-number" type="text" class="form-control" placeholder="Numar" ngModel required>
               </div>
     
               <div class="form-group">
-                <input name="auto" id="register-auto" type="text" class="form-control" placeholder="Auto" ngModel required>
+                <input name="detalii" id="register-detalii" type="text" class="form-control" placeholder="Detalii" ngModel required>
               </div>
     
               <div class="form-group">
@@ -172,10 +173,6 @@
               <!-- <div class="form-group">
                 <input name="sumaFaraTVA" id="register-sumaTotala" type="text" class="form-control" placeholder="Suma FaraTVA" ngModel required>
               </div> -->
-
-              <div class="form-group">
-                <input name="litri" id="register-sumaTotala" type="text" class="form-control" placeholder="Litri" ngModel required>
-              </div>
 
     
               <!-- <div class="form-group">
@@ -242,7 +239,7 @@
 --------------------333333333333333------------------------- -->
 
 
-
+<!--  -->
   <!--  -->
 
 
@@ -255,22 +252,13 @@
  <div class="center">
   <div class="col-md-6">
   <div class="md-form active-purple active-purple-2 mb-3">
-    <input class="form-control" type="text" #myInput [(ngModel)]="furniz" (input)="Search()" placeholder="Search furnizor..." aria-label="Search">
-    {{furniz}}
+    <input class="form-control" type="text" #myInput [(ngModel)]="name" (input)="Search()" placeholder="Search nume..." aria-label="Search">
+    {{name}}
     <br/>
   </div>
   </div>
 </div>
 
-<div class="center">
-  <div class="col-md-6">
-    <div class="md-form active-purple active-purple-2 mb-3">
-      <input class="form-control" type="text" #myInput [(ngModel)]="aut" (input)="SearchAuto()" placeholder="Search auto..." aria-label="Search">
-      {{aut}}
-      <br/>
-    </div>
-    </div>
-  </div>
 
 
   <div class="center">
@@ -398,18 +386,17 @@
 
 
 
-
 <div class="center">
   <div class="pagination">
-  <a href="#">&laquo;</a>
+  <a href="/asigurari">&laquo;</a>
   <a href="#">1</a>
-  <a href="/alim" class="active">2</a>
+  <a href="/alim">2</a>
   <a href="/service">3</a>
   <a href="/asigurari">4</a>
-  <a href="/salar">5</a>
+  <a href="/salar" class="active">5</a>
   <a href="/venit">6</a>
-  <a href="#contact">7</a>
-  <a href="/service">&raquo;</a>
+  <a href="/contact">7</a>
+  <a href="/venit">&raquo;</a>
   </div>
 </div>
 

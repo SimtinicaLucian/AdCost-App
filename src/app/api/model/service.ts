@@ -11,13 +11,14 @@
  */
 
 
-export interface Alimentari { 
+export interface Service { 
     data?: string;
     furnizor?: string;
     number?: number;
     auto?: string;
+    descriere?: string;
     sumaTotala?: number;
-    // sumaFaraTVA?: number;
-    // tva?: number;
-    litri?: number;
+
+    
+    
 }

@@ -11,13 +11,13 @@
  */
 
 
-export interface Alimentari { 
+export interface Salariu { 
     data?: string;
-    furnizor?: string;
+    nume?: string;
     number?: number;
-    auto?: string;
+    detalii?: string;
     sumaTotala?: number;
-    // sumaFaraTVA?: number;
-    // tva?: number;
-    litri?: number;
+    //
+    //
+    
 }

@@ -1,53 +1,44 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { SalariuService } from '../api/api/salariu.service';
+import {NgForm} from '@angular/forms';
+
 import { employees } from '../../datamodel/employess.model'
-import{ ServiceService } from '../api/api/service.service';
-import { NgForm } from '@angular/forms';
-
-
- // -------------------------------
-
-// /--------------------------------
 
 @Component({
-  selector: 'app-service',
-  templateUrl: './service.component.html',
-  styleUrls: ['./service.component.scss']
+  selector: 'app-salariu',
+  templateUrl: './salariu.component.html',
+  styleUrls: ['./salariu.component.scss']
 })
-
-
-export class ServiceComponent implements OnInit {
+export class SalariuComponent implements OnInit {
   public columns: any;
   public columns2: any;
   public rows: any;
   public variabile: any;
   public auto: any;
-  public furnizor: any;
+  public nume: any;
   number: any;
   // ---------------------------
   empolyess: employees[] =[];
-  furniz: string;
-  aut: string;
+  name: string;
   num: any;
 // ----------------------------
   
 
 
 
-  constructor(public serviceService : ServiceService) { 
+  constructor(public salariuService : SalariuService) { 
     this.columns = [
       {name: 'data'},
-      {name: 'furnizor'},
+      {name: 'nume'},
       {name: 'number'},
-      {name: 'auto'},
-      {name: 'descriere'},
+      {name: 'detalii'},
       {name: 'sumaTotala'}
-      
     ]
    }
 
 
   ngOnInit() {
-    this.serviceService.serviceSearchAllGet().subscribe((res : any[]) => {
+    this.salariuService.salariuSearchAllGet().subscribe((res : any[]) => {
       this.rows = res;
       this.empolyess = res;
 
@@ -59,19 +50,19 @@ export class ServiceComponent implements OnInit {
   }
 
 register(f: NgForm){
-  this.serviceService.add(f.value).subscribe(()=>{})
+  this.salariuService.add(f.value).subscribe(()=>{})
   location.reload();
 }
 
 delete(test){
   // console.log("numar: " + test.uid);
-  this.serviceService.deletePet(test.number).subscribe((res)=>{console.log(res)})
+  this.salariuService.deletePet(test.number).subscribe((res)=>{console.log(res)})
   location.reload();
 }
 
 search(data){
   // console.log("numar: " + data.number);
-  this.serviceService.getPetById(data.number).subscribe((res )=>{
+  this.salariuService.getPetById(data.number).subscribe((res )=>{
     this.auto= res;
     // this.auto = res.auto;
     // this.furnizor = res.furnizor;
@@ -83,8 +74,8 @@ search(data){
 
 search2(data1){
   // console.log("numar: " + data1.furnizor);
-  this.serviceService.getPetByFurnizor(data1.furnizor).subscribe((res )=>{
-    this.furnizor= res;
+  this.salariuService.getPetByNume(data1.nume).subscribe((res )=>{
+    this.nume= res;
     // this.auto = res.auto;
     // this.furnizor = res.furnizor;
     
@@ -99,38 +90,24 @@ search2(data1){
 Search()
 {
   
-  if(this.furniz != ""){
+  if(this.name != ""){
 
 
   this.rows=this.rows.filter(res=>{
-    return res.furnizor.toLocaleLowerCase().match(this.furniz.toLocaleLowerCase());
+    return res.nume.toLocaleLowerCase().match(this.name.toLocaleLowerCase());
   });
 
  
 
-  }else if (this.furniz ==""){
+  }else if (this.name ==""){
   this.ngOnInit();
 }
 }
 
 // -----------------------------
 
-SearchAuto()
-{
-  
-  if(this.aut != ""){
 
 
-  this.rows=this.rows.filter(res=>{
-    return res.auto.toLocaleLowerCase().match(this.aut.toLocaleLowerCase());
-  });
-
- 
-
-  }else if (this.aut ==""){
-  this.ngOnInit();
-}
-}
 
 
 SearchNumber()
@@ -140,7 +117,7 @@ SearchNumber()
   if(this.num != this.rows){
     
     
-    this.serviceService.getPetById(this.num).subscribe((res )=>{
+    this.salariuService.getPetById(this.num).subscribe((res )=>{
     this.rows= res;
 
   });

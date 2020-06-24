@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { employees } from '../../datamodel/employess.model'
-import{ ServiceService } from '../api/api/service.service';
+import{ AsigurariService } from '../api/api/asigurari.service';
 import { NgForm } from '@angular/forms';
 
 
@@ -9,13 +9,13 @@ import { NgForm } from '@angular/forms';
 // /--------------------------------
 
 @Component({
-  selector: 'app-service',
-  templateUrl: './service.component.html',
-  styleUrls: ['./service.component.scss']
+  selector: 'app-asigurari',
+  templateUrl: './asigurari.component.html',
+  styleUrls: ['./asigurari.component.scss']
 })
 
 
-export class ServiceComponent implements OnInit {
+export class AsigurariComponent implements OnInit {
   public columns: any;
   public columns2: any;
   public rows: any;
@@ -33,21 +33,22 @@ export class ServiceComponent implements OnInit {
 
 
 
-  constructor(public serviceService : ServiceService) { 
+  constructor(public asigurarieService : AsigurariService) { 
     this.columns = [
       {name: 'data'},
       {name: 'furnizor'},
       {name: 'number'},
       {name: 'auto'},
       {name: 'descriere'},
-      {name: 'sumaTotala'}
+      {name: 'sumaTotala'},
+
       
     ]
    }
 
 
   ngOnInit() {
-    this.serviceService.serviceSearchAllGet().subscribe((res : any[]) => {
+    this.asigurarieService.serviceSearchAllGet().subscribe((res : any[]) => {
       this.rows = res;
       this.empolyess = res;
 
@@ -59,19 +60,19 @@ export class ServiceComponent implements OnInit {
   }
 
 register(f: NgForm){
-  this.serviceService.add(f.value).subscribe(()=>{})
+  this.asigurarieService.add(f.value).subscribe(()=>{})
   location.reload();
 }
 
 delete(test){
   // console.log("numar: " + test.uid);
-  this.serviceService.deletePet(test.number).subscribe((res)=>{console.log(res)})
+  this.asigurarieService.deletePet(test.number).subscribe((res)=>{console.log(res)})
   location.reload();
 }
 
 search(data){
   // console.log("numar: " + data.number);
-  this.serviceService.getPetById(data.number).subscribe((res )=>{
+  this.asigurarieService.getPetById(data.number).subscribe((res )=>{
     this.auto= res;
     // this.auto = res.auto;
     // this.furnizor = res.furnizor;
@@ -83,7 +84,7 @@ search(data){
 
 search2(data1){
   // console.log("numar: " + data1.furnizor);
-  this.serviceService.getPetByFurnizor(data1.furnizor).subscribe((res )=>{
+  this.asigurarieService.getPetByFurnizor(data1.furnizor).subscribe((res )=>{
     this.furnizor= res;
     // this.auto = res.auto;
     // this.furnizor = res.furnizor;
@@ -113,7 +114,7 @@ Search()
 }
 }
 
-// -----------------------------
+
 
 SearchAuto()
 {
@@ -133,6 +134,8 @@ SearchAuto()
 }
 
 
+
+
 SearchNumber()
 {
 
@@ -140,7 +143,7 @@ SearchNumber()
   if(this.num != this.rows){
     
     
-    this.serviceService.getPetById(this.num).subscribe((res )=>{
+    this.asigurarieService.getPetById(this.num).subscribe((res )=>{
     this.rows= res;
 
   });

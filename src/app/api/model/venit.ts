@@ -11,13 +11,12 @@
  */
 
 
-export interface Alimentari { 
+export interface Venit { 
     data?: string;
     furnizor?: string;
     number?: number;
     auto?: string;
     sumaTotala?: number;
-    // sumaFaraTVA?: number;
-    // tva?: number;
-    litri?: number;
+    detalii?: string;
+    // litri?: number;
 }
