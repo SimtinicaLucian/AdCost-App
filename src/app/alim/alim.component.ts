@@ -24,6 +24,8 @@ export class AlimComponent implements OnInit {
   // ---------------------------
   empolyess: employees[] =[];
   furniz: string;
+  aut: string;
+  num: any;
 // ----------------------------
   
 
@@ -111,8 +113,56 @@ Search()
 // -----------------------------
 
 
+SearchAuto()
+{
+  
+  if(this.aut != ""){
+
+
+  this.rows=this.rows.filter(res=>{
+    return res.auto.toLocaleLowerCase().match(this.aut.toLocaleLowerCase());
+  });
+
+ 
+
+  }else if (this.aut ==""){
+  this.ngOnInit();
+}
+}
+
+
+SearchNumber()
+{
+
+
+  if(this.num != this.rows){
+    
+    
+    this.alimService.getPetById(this.num).subscribe((res )=>{
+    this.rows= res;
+
+  });
+
+  this.rows=this.rows.filter(res=>{
+    return res.number.toLocaleLowerCase().match(this.num.toLocaleLowerCase());
+  });
+
+
+  // this.rows=this.rows.filter(res=>{
+  //   return res.num.toString().match(this.num.toString());
+  // });
+
+
+}else if (this.num ==this.rows){
+  this.ngOnInit();
+}
+
 
 
 }
 
 
+// this.alimService.getPetById(data.number).subscribe((res )=>{
+//   this.auto= res;
+
+}

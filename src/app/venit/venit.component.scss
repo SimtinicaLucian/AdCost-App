@@ -29,6 +29,16 @@ h1::after{
   color: #555;
 }
 
+
+#add
+{
+  padding-top: 0px;
+  padding-bottom: 0px;
+  color: #555;
+}
+
+
+
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 /*
@@ -93,7 +103,7 @@ bootstrap table theme
             &.active,
             &:hover {
               a {
-                background-color: #545454;
+                background-color: #be0202;
                 font-weight: bold;
               }
             }
@@ -950,6 +960,7 @@ $datatable-summary-row-background-hover: #ddd !default;
         -webkit-transform: translate(0, 0) scale(1, 1);
         transform: translate(0, 0) scale(1, 1);
         background-color: rgb(170, 209, 249);
+        
 
         .bar {
           transition: all 0.2s linear;
@@ -1250,6 +1261,7 @@ input {
 
 // 2 SEARCH
 
+
 .register-item{
   margin-left: 63px;
   margin-right: 63px;
@@ -1327,8 +1339,7 @@ input {
   padding: 10px;
 }
 
-
-
+// ---------------------
 
 .center {
   text-align: center;

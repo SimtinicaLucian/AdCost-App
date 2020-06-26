@@ -1,81 +1,88 @@
-
-
 <router-outlet>
-    <html>
-    <head>
-        <link rel="stylesheet" href="app.component.scss">
+  <html>
+  <head>
+      <link rel="stylesheet" href="app.component.scss">
 
-    <link rel="stylesheet"
+  <link rel="stylesheet"
 href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3
 /css/bootstrap.min.css">
 <link rel="stylesheet"
- href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
-  </head>
-  <body>
-    <!----NavigationBar---->
-    <section id="nav-bar">
+</head>
+<body>
+  <!----NavigationBar---->
+  <section id="nav-bar">
 
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <!-- <a class="navbar-brand" href="#"><img src="/assets/circle.png"></a> -->
-        <a class="navbar-brand" href="#"><i class="fa fa-truck"></i></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#">HOME</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/alim">ALIMENTARI</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/service">SERVICE</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">CHELTUIELI</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">ASIGURARI</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">SALARIU</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">PROFIT </a>
-            </li>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <!-- <a class="navbar-brand" href="#"><img src="/assets/circle.png"></a> -->
+      <a class="navbar-brand" href="#"><i class="fa fa-truck"></i></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="#">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/alim">ALIMENTARI</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/service">SERVICE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/asigurari">ASIGURARI</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/salar">SALARIU</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/venit">INCASARI </a>
+          </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">CONTACT </a>
-              
-            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">CONTACT </a>
+          </li>
 
+        </ul>
 
-            
-            
+     
 
 
+      </div>
+    </nav>
+
+  </section>
 
 
-          </ul>
-        </div>
+  <!-- <header>
+    <nav class ="navbar navbar-expand-md navbar-dark bg-dark">
+    <div><a href="https://www.javainuse.com" class="navbar-brand">JavaInUse</a></div>
+    
+    <ul class="navbar-nav">
+       
+      <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/" class="nav-link">View Employees</a></li>
+      <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/addemployee" class="nav-link">Add New Employee</a></li>
+      <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a></li>
+      <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">LogOut</a></li>
+
+    
+    </ul>
       </nav>
+    </header> -->
 
-    </section>
 
 
   
 
 
 
-
-
-    </body>
-    
+  </body>
+  
 
 
 </html>

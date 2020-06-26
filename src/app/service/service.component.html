@@ -1,121 +1,395 @@
+  
 <html>
-<head>
-<title>Business</title>
-<link rel="stylesheet" href="service.component.scss">
-<link rel="stylesheet"
-href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3
-/css/bootstrap.min.css">
-<link rel="stylesheet"
- href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-
-  </head>
-  <body>
-    
+  <head>
+  <title>Business</title>
+  <link rel="stylesheet" href="service.component.scss">
+  <link rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3
+  /css/bootstrap.min.css">
+  <link rel="stylesheet"
+   href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
   
-    <!-- <section id="contact">
-      <div class="container">
-        <h1>Contact</h1>
-        <div class="row">
-        <div class="col-md-6">
-        <form class="contact-form">
-        <div class="form-group">
-        <input type="text" class="form-control" placeholder="Your name">
-        </div>
-    
-        <div class="form-group">
-          <input type="number" class="form-control" placeholder="Phone no.">
-          </div>
-    
-          <div class="form-group">
-            <input type="email" class="form-control" placeholder="Email id">
-            </div>
-    
-            <div class="form-group">
-              <textarea class="form-control" rows="4"
-              placeholder="Your Message"></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary">Trimiteti</button>
-        </form>
-        </div>
-        <div class="col-md-6 contact-info">
-          <div class="follow"><b>Adress:</b><i class="fa fa-map-marker"></i> Iaz, 77, Rucar, RO</div>
-    
-          <div class="follow"><b>Phone:</b><i class="fa fa-phone"></i>+4 0797334197</div>
-    
-          <div class="follow"><b>Email:</b><i class="fa fa-envelope-o"></i>simtinica.cosmin@gmail.com</div>
-          
-        </div>
-    
-    
-        </div>
-    
-      </div>
-      </section>
- -->
-
-<!-- --------------------------------------------------------------------------------- -->
- <!-- <div class="md-form">
-  <input type="search" [(ngModel)]="searchText" placeholder="Search text">
-</div>
-<ul *ngFor="let user of usersArray | filter: searchText">
-  <li>{{user}}</li>
-</ul> -->
+    </head>
+    <body>
 
 
-<input type="text" #myInput [(ngModel)]="furniz" (input)="Search()"   />
-  
-  {{furniz}}
-  <br/>
-  <!-- <table class="table">
-    <tr>
-      <th>Data</th>
-      <th>Furnizor</th>
-      <th>Number</th>
-      <th>Auto</th>
-      <th>sumaTotala</th>
-      <th>Litri</th>
-    </tr>
-    <tr *ngFor='let o of empolyess'>
-      <td>{{o.data}}</td>
-      <td>{{o.furnizor}}</td>
-      <td>{{o.number}}</td>
-      <td>{{o.auto}}</td>
-      <td>{{o.sumaTotala}}</td>
-      <td>{{o.litri}}</td>
 
-    </tr>
-  </table> -->
-
-  <div class="ion-padding">
-    <ngx-datatable 
-      class="material"
-      [limit]="2" 
-      [rows]="empolyess" 
-      [rowHeight]="50" 
-      [columns]="columns"
-      [columnMode]="'force'" 
-      [sortType]="'multi'" 
-      [headerHeight]="50" 
-      [footerHeight]="50">
-    </ngx-datatable>
-  </div>
  
 
+<!-- <section id="alimentari">
+    <div class="container">
+      <h1>Adaugati alimentari</h1>
+      <div class="row">
+      <div class="col-md-6">
+      <form class="alimentari-form">
+      <div class="form-group">
+      <input type="text" class="form-control" placeholder="Data">
+      </div>
+  
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Furnizor">
+        </div>
+  
+        <div class="form-group">
+          <input type="number" class="form-control" placeholder="Number">
+          </div>
+  
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Auto">
+            </div>
+         <div class="form-group">
+                <input type="number" class="form-control" placeholder="SumaTotala">
+                </div>
+         <div class="form-group">
+                    <input type="number" class="form-control" placeholder="Litri">
+                    </div>
+                
+            <button type="submit" class="btn btn-primary">Adaugati</button>
+      </form>
+      </div>
+      </div>
+    </div>
+    </section> -->
+
+<!-- ----------------------1111111-------------------------------- -->
+    <!-- <section id="contact">
+    <div class="container">
+    
+    <div class="row">
+    <div class="col-md-6">
+      
+      <div class="register-item">
+        <form #f="ngForm" (ngSubmit)="register(f)" class="form form-register">
+  
+          <div class="form-group">
+            <input name="data" id="register-data" type="text" class="form-control" placeholder="Data" ngModel required>     
+          </div>
+          <div class="form-group">
+            <input name="furnizor" id="register-furnizor" type="text" class="form-control" placeholder="Furnizor" ngModel required>       
+          </div>
+          <div class="form-group">
+            <input name="number" id="register-number" type="text" class="form-control" placeholder="Numar" ngModel required>
+          </div>
+          <div class="form-group">
+            <input name="auto" id="register-auto" type="text" class="form-control" placeholder="Auto" ngModel required>
+          </div>
+          <div class="form-group">
+            <input name="sumaTotala" id="register-sumaTotala" type="text" class="form-control" placeholder="Suma totala" ngModel required>
+          </div>
+          <div class="form-group">
+            <input name="litri" id="register-litri" type="text" class="form-control" placeholder="Litri" ngModel required>
+          </div>
+  
+          <div class="form-group">
+            <input type="submit" value="Register">
+          </div>
+        </form>
+      </div>
+    </div>
+    </div>
+    </div>
+    </section> -->
+    
+
+<!-- ----------------------1111111-------------------------------- -->
 
 
-       
+    <!-- <div class="col-md-6 contact-info">   
+      <div class="register-item">
+        <form #f="ngForm" (ngSubmit)="delete(f.value)" class="form form-register">
+          <div class="form-group">
+            <label class="user" ><span class="hidden">Number</span></label>
+            <input name="number" id="number" type="text" class="form-group" placeholder="Number" ngModel required>
+          </div>
+  
+          <div class="form-group">
+            <input type="submit" value="Delete">
+          </div>
+</form>
+</div>
+</div> -->
 
-        </body>
 
-    </html>
-
+<!-- ---------------------------------------------------- -->
 
 
 
 
+<!-- -------------------------2------------------------------------ -->
+
+<section id="contact">
+  <div class="container">
+    <h1>Service</h1>
+  </div>
+</section>
 
 
 
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card-body">
+        <form class="form-signin">
+            <div class="register-item">
+               <form #f="ngForm" (ngSubmit)="register(f)" class="form form-register">
+                <div class="form-group">
+                  <input name="data" id="register-data" type="text" class="form-control" placeholder="Data" ngModel required>     
+                </div>
+      
+                <div class="form-group">
+                  <input name="furnizor" id="register-furnizor" type="text" class="form-control" placeholder="Furnizor" ngModel required>       
+                </div>
+      
+                <div class="form-group">
+                  <input name="number" id="register-number" type="text" class="form-control" placeholder="Numar" ngModel required>
+                </div>
+      
+                <div class="form-group">
+                  <input name="auto" id="register-auto" type="text" class="form-control" placeholder="Auto" ngModel required>
+                </div>
+
+                <div class="form-group">
+                  <input name="descriere" id="register-auto" type="text" class="form-control" placeholder="Descriere" ngModel required>
+                </div>
+      
+                <div class="form-group">
+                  <input name="sumaTotala" id="register-sumaTotala" type="text" class="form-control" placeholder="Suma totala" ngModel required>
+                </div>
+
+                <!-- -------------------------------------------------------------------- -->
+                
+                <!-- --------------------------------------------------------------------- -->
+                
+                  <div class="form-field2">
+                    <input type="submit" value="Register">
+                  </div>
+                </form>
+              </div>
+           
+          </form>
+        
+      </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+<!-- -------------------------2------------------------------------ -->
+<div class="col-8 col-sm-6">
+  <div class="card-body">
+    <form class="form-signin">
+        <div class="register-item">
+               <form #b="ngForm" (ngSubmit)="delete(b.value)" class="form form-register">
+                  <div class="form-field"> 
+                    <input name="number" id="register-number" type="text" class="form-control" placeholder="Numar" ngModel required>
+                  </div>
+                  <div class="form-field2">
+                    <input type="submit" value="Delete">
+                  </div>
+                </form>
+              </div>
+           
+          </form>
+        </div>
+      </div>
+
+
+
+<!-- 
+--------------------333333333333333------------------------- -->
+
+<div class="col-4 col-sm-6">
+  <div class="card-body">
+    <form class="form-signin">
+        <div class="register-item">
+                 <form #c="ngForm" (ngSubmit)="search(c.value)" class="form form-register">
+                    <div class="form-field"> 
+                      <input name="number" id="register-number" type="text" class="form-control" placeholder="Numar" ngModel required>
+                    </div>
+                    <div class="form-field2">
+                      <input type="submit" value="Search Number">
+                    </div>
+                  </form>
+                </div>
+             
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="center">
+      <div class="col-md-6">
+      <div class="md-form active-purple active-purple-2 mb-3">
+        <input class="form-control" type="text" #myInput [(ngModel)]="furniz" (input)="Search()" placeholder="Search furnizor..." aria-label="Search">
+        {{furniz}}
+        <br/>
+      </div>
+      </div>
+    </div>
+    
+    <div class="center">
+      <div class="col-md-6">
+        <div class="md-form active-purple active-purple-2 mb-3">
+          <input class="form-control" type="text" #myInput [(ngModel)]="aut" (input)="SearchAuto()" placeholder="Search auto..." aria-label="Search">
+          {{aut}}
+          <br/>
+        </div>
+        </div>
+      </div>
+    
+    
+      <div class="center">
+        <div class="col-md-6">
+          <div class="md-form active-purple active-purple-2 mb-3">
+            <input class="form-control" type="text" #myInput [(ngModel)]="num" (input)="SearchNumber()" placeholder="Search number..." aria-label="Search">
+            {{num}}
+            <br/>
+          </div>
+          </div>
+        </div>
+
+
+
+
+
+
+<div class="ion-padding">
+  <ngx-datatable 
+    class="material"
+    [limit]="1" 
+    [rows]="auto" 
+    [rowHeight]="50" 
+    [columns]="columns"
+    [columnMode]="'force'" 
+    [sortType]="'multi'" 
+    [headerHeight]="50" 
+    [footerHeight]="50">
+  </ngx-datatable>
+</div>
+   
+
+
+
+<div class="ion-padding">
+  <ngx-datatable 
+    class="material"
+    [limit]="10" 
+    [rows]="rows" 
+    [rowHeight]="50" 
+    [columns]="columns"
+    [columnMode]="'force'" 
+    [sortType]="'multi'" 
+    [headerHeight]="50" 
+    [footerHeight]="50">
+  </ngx-datatable>
+</div>
+
+
+   
+
+
+<!-- ------------------- -->
+
+
+
+      <!-- <input class="form-control" type="text" name="search2" [(ngModel)]="auto" autocomplete="off" placeholder="&#61442;  Start searching for a hero by id or name or country">  -->
+
+    
+      
+      
+      <!-- <section id="search2">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-9 col-md-7 col-lg-6 mx-auto">
+              <div class="card card-signin my-5">
+                <div class="card-body">
+                  <form class="form-signin">
+                      <div class="register-item">
+                       <form #d="ngForm" (ngSubmit)="search2(d.value)" class="form form-register">
+                        
+              
+                        <div class="form-group">
+                          <input name="furnizor" id="register-furnizor" type="text" class="form-control"  placeholder="Furnizor" ngModel required>       
+                        </div>
+              
+                       
+               
+                          <div class="form-field2">
+                            <input type="submit" value="Search Furnizor">
+                          </div>
+                        </form>
+                      </div>
+                   
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </section>
+      
+      
+      
+      
+      <div class="ion-padding">
+        <ngx-datatable 
+          class="material"
+          [limit]="4" 
+          [rows]="furnizor" 
+          [rowHeight]="50" 
+          [columns]="columns"
+          [columnMode]="'force'" 
+          [sortType]="'multi'" 
+          [headerHeight]="50" 
+          [footerHeight]="50">
+        </ngx-datatable>
+      </div>
+      -->
+  
+
+
+
+<!-- ------------------- -->
+
+
+
+
+
+
+
+<div class="center">
+  <div class="pagination">
+  <a href="/alim">&laquo;</a>
+  <a href="#">1</a>
+  <a href="/alim">2</a>
+  <a href="/service" class="active">3</a>
+  <a href="/asigurari">4</a>
+  <a href="/salar">5</a>
+  <a href="/venit">6</a>
+  <a href="#contact">7</a>
+  <a href="/asigurari">&raquo;</a>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+</body>
+</html>

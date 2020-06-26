@@ -6,6 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  latitude = 45.389;
+  longitude = 25.176;
+  locationChosen = false;
+
+  onChoseLocation(event) {
+    this.latitude = event.coords.lat;
+    this.longitude = event.coords.lng;
+    this.locationChosen = true;
+  }
 
   constructor() { }
 
@@ -13,3 +22,5 @@ export class HomeComponent implements OnInit {
   }
 
 }
+
+
