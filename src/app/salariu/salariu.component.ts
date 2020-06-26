@@ -17,6 +17,7 @@ export class SalariuComponent implements OnInit {
   public auto: any;
   public nume: any;
   number: any;
+  dat: any;
   // ---------------------------
   empolyess: employees[] =[];
   name: string;
@@ -143,5 +144,24 @@ SearchNumber()
 
 // this.alimService.getPetById(data.number).subscribe((res )=>{
 //   this.auto= res;
+
+
+SearchData()
+{
+  
+  if(this.dat != ""){
+
+
+  this.rows=this.rows.filter(res=>{
+    return res.data.toLocaleLowerCase().match(this.dat.toLocaleLowerCase());
+  });
+
+ 
+
+  }else if (this.dat ==""){
+  this.ngOnInit();
+}
+}
+
 
 }

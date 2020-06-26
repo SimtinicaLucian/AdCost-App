@@ -55,7 +55,7 @@ import { AgmCoreModule } from '@agm/core';
     HttpClientModule,
     NgxDatatableModule,
     AgmCoreModule.forRoot({
-      // apiKey: 'AIzaSyBo0RCdL-YLBmKPTgxXzYZ0GGTtIljHmlM'
+      apiKey: 'AIzaSyBo0RCdL-YLBmKPTgxXzYZ0GGTtIljHmlM'
     })
 
 

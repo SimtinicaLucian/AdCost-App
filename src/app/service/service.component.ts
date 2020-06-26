@@ -28,6 +28,7 @@ export class ServiceComponent implements OnInit {
   furniz: string;
   aut: string;
   num: any;
+  dat: string;
 // ----------------------------
   
 
@@ -166,5 +167,24 @@ SearchNumber()
 
 // this.alimService.getPetById(data.number).subscribe((res )=>{
 //   this.auto= res;
+
+
+SearchData()
+{
+  
+  if(this.dat != ""){
+
+
+  this.rows=this.rows.filter(res=>{
+    return res.data.toLocaleLowerCase().match(this.dat.toLocaleLowerCase());
+  });
+
+ 
+
+  }else if (this.dat ==""){
+  this.ngOnInit();
+}
+}
+
 
 }

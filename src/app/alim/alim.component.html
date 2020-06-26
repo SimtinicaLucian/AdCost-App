@@ -209,7 +209,7 @@
         </form>
       </div>
     </div>
-    <div class="col-4 col-sm-6">
+    <!-- <div class="col-4 col-sm-6">
       <div class="card-body">
         <form class="form-signin">
             <div class="register-item">
@@ -225,7 +225,7 @@
          
         </form>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>
 
@@ -283,12 +283,23 @@
       </div>
     </div>
 
+
+    <div class="center">
+      <div class="col-md-6">
+        <div class="md-form active-purple active-purple-2 mb-3">
+          <input class="form-control" type="text" #myInput [(ngModel)]="dat" (input)="SearchData()" placeholder="Search data..." aria-label="Search">
+          {{aut}}
+          <br/>
+        </div>
+        </div>
+      </div>
+
   
 
 
 
 
-<div class="ion-padding">
+<!-- <div class="ion-padding">
   <ngx-datatable 
     class="material"
     [limit]="1" 
@@ -300,7 +311,7 @@
     [headerHeight]="50" 
     [footerHeight]="50">
   </ngx-datatable>
-</div>
+</div> -->
    
 
 
